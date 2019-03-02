@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ -z "${1+present}" ]]; then
+	echo "DATABASE NAME MISSING"
+	exit 1
+fi
+
+if [[ -z "${2+present}" ]]; then
+	echo "FILENAME MISSING"
+	exit 1
+fi
+
+export PGPASSWORD=hotdog
+
+echo "DUMPING DATABASE"
+pg_dump --username=postgres $1 > /Users/trungtran/Desktop/source/$2.sql
+echo "DONE."
+current_date_time="`date +%H:%M:%S`"
+echo $current_date_time

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ -z "${1+present}" ]]; then
+	echo "FILENAME MISSING"
+	exit 1
+fi
+
+if [[ -z "${2+present}" ]]; then
+	echo "DATABASE NAME MISSING"
+	exit 1
+fi
+
+export PGPASSWORD=hotdog
+
+echo "DROPPING DATABASE"
+dropdb --username=postgres $2
+echo "CREATING DATABASE"
+createdb --username=postgres --owner=odoo $2
+echo "RESTORING DATABASE DUMP"
+psql --username=postgres --dbname=$2 --single-transaction --file=/Users/trungtran/Desktop/source/$1.sql
+echo "DONE."
+date

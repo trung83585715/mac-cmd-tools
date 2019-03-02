@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+cp /Users/trungtran/Desktop/source/m2 /usr/local/bin
+
+cp /Users/trungtran/Desktop/source/dump /usr/local/bin
+
+cp /Users/trungtran/Desktop/source/restore /usr/local/bin
+
+cp /Users/trungtran/Desktop/source/fix_web_debranding /usr/local/bin
+
+cp /Users/trungtran/Desktop/source/push_to_bin /usr/local/bin
+
+cp /Users/trungtran/Desktop/source/m3 /usr/local/bin
